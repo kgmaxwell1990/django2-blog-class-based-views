@@ -3,7 +3,7 @@
 {% block content %}
 <h1>The Blog</h1>
 
-<a href="#" class="btn btn-warning">Add Post</a>
+<a href="{% url 'add_post' %}" class="btn btn-warning">Add Post</a>
 
     {% for post in object_list %}
         <div class="row">

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
+{% block content %}
+<h1>Add Blog Post</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|as_bootstrap}}
+    <input type="submit" value="Submit" class="btn btn-success"/> 
+    {% if post.id %}
+        <a href="{% url 'post' post.id %}" class="btn btn-danger">Cancel</a> 
+    {% else %}
+        <a href="{% url 'posts' %}" class="btn btn-danger">Cancel</a> 
+    {% endif %}
+</form>
+
+{% endblock content %}

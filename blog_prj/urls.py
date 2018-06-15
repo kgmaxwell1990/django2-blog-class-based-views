@@ -19,7 +19,6 @@ from django.views.static import serve
 from .settings import MEDIA_ROOT
 
 from home.views import HomePageView
-from posts.views import ShowAllPosts
 from accounts import urls as accounts_urls
 from posts import urls as posts_urls
 
