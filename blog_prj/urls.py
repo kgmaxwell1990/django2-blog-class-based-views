@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.static import serve
+from .settings import MEDIA_ROOT
 
 from home.views import HomePageView
 from posts.views import ShowAllPosts
 from accounts import urls as accounts_urls
+from posts import urls as posts_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
-    path('posts/', ShowAllPosts.as_view(), name='posts_list'),
-    path('accounts/', include(accounts_urls), name='home'),
+    path('posts/', include(posts_urls)),
+    path('accounts/', include(accounts_urls)),
+    path('media/<path:path>', serve,{'document_root': MEDIA_ROOT}),
 ]
