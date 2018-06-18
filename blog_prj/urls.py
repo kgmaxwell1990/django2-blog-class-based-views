@@ -25,7 +25,9 @@ from posts import urls as posts_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
-    path('posts/', include(posts_urls)),
     path('accounts/', include(accounts_urls)),
+    path('blog/', include(posts_urls)),
     path('media/<path:path>', serve,{'document_root': MEDIA_ROOT}),
 ]
+
+

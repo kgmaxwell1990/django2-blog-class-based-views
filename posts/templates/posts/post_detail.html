@@ -7,8 +7,8 @@
     <p>{{object.content}}</p>
 </div>
 
-<a href="{% url 'posts' %}" class="btn btn-success">GO BACK</a>
-<a href="{% url 'edit_post' object.id %}" class="btn btn-warning">EDIT</a>
-<a href="{% url 'delete_post' object.id %}" class="btn btn-danger">DELETE</a>
+<a href="{% url 'posts' %}" class="btn btn-success">Go Back</a>
+<a href="{% url 'edit_post' object.id %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'delete_post' object.id %}" class="btn btn-danger">Delete</a>
 
 {% endblock %}
