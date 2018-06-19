@@ -13,6 +13,12 @@ class ShowPostList(ListView):
 class ShowPostItem(DetailView):
     model = Post
     
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        obj.views += 1
+        obj.save()
+        return super(ShowPostItem, self).dispatch(request, *args, **kwargs)
+    
 class AddPostItem(CreateView):
     model = Post
     fields = ['title', 'content', 'image']

@@ -30,4 +30,6 @@ urlpatterns = [
     path('media/<path:path>', serve,{'document_root': MEDIA_ROOT}),
 ]
 
+handler404 = 'home.views.error_404_view'
+
 
