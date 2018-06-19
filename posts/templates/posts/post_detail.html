@@ -8,7 +8,11 @@
 </div>
 
 <a href="{% url 'posts' %}" class="btn btn-success">Go Back</a>
+{% if user == post.author or user.is_superuser %}
 <a href="{% url 'edit_post' object.id %}" class="btn btn-warning">Edit</a>
 <a href="{% url 'delete_post' object.id %}" class="btn btn-danger">Delete</a>
+{% endif %}
+
+
 
 {% endblock %}

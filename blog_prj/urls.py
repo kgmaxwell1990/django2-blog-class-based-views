@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePageView.as_view(), name='home'),
     path('accounts/', include(accounts_urls)),
-    path('blog/', include(posts_urls)),
+    path('posts/', include(posts_urls)),
     path('media/<path:path>', serve,{'document_root': MEDIA_ROOT}),
 ]
 

@@ -4,4 +4,14 @@
 {% block content %}
 <h1>Profile</h1>
 <p>Hi {{user}}</p>
+
+
+<h4>Liked Posts</h4>
+{% for post in user.liked_posts.all %}
+
+<a href="{% url 'post' post.id %}"><p>{{ post.title }}</p></a>
+
+
+{% endfor %}
+
 {% endblock content %}
